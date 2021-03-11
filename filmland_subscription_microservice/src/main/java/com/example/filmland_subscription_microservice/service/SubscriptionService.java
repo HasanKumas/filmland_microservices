@@ -81,7 +81,7 @@ public class SubscriptionService {
      */
     public List<Subscription> getAllUserSubscriptions(String email) {
         Long userID = userAccountClient.getUserID(email);
-        List<Subscription> existingSubscriptions = new ArrayList<>();
+        List<Subscription> existingSubscriptions;
         existingSubscriptions = subscriptionRepository.findAll();
 
         return existingSubscriptions.stream()

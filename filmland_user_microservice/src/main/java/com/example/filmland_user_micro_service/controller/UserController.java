@@ -3,9 +3,13 @@ package com.example.filmland_user_micro_service.controller;
 import com.example.filmland_user_micro_service.FilmlandUserMicroServiceApplication;
 import com.example.filmland_user_micro_service.dto.RequestUser;
 import com.example.filmland_user_micro_service.service.UserAccountService;
+import org.apache.http.Header;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("filmland")
@@ -22,7 +26,7 @@ public class UserController {
     @GetMapping("/login")
     public ResponseEntity<String> login(){
 
-        return new ResponseEntity<>(subscriptionClient.getSubscriptions().toLowerCase(), HttpStatus.OK);
+        return new ResponseEntity<>(subscriptionClient.getAllSubscriptions(), HttpStatus.OK);
     }
 
     /**
@@ -46,5 +50,10 @@ public class UserController {
     public ResponseEntity<Long> getUserID(@RequestParam String email){
 
        return new ResponseEntity<>(userAccountService.getUserID(email), HttpStatus.OK);
+    }
+    @GetMapping("/get-all-users")
+    public ResponseEntity<List> getAllUsers(){
+
+       return new ResponseEntity<>(userAccountService.getAllUsers(), HttpStatus.OK);
     }
 }

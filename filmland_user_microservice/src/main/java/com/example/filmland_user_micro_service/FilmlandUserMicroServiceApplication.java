@@ -8,6 +8,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import java.util.List;
 
 @EnableFeignClients
 @EnableDiscoveryClient
@@ -22,6 +24,9 @@ public class FilmlandUserMicroServiceApplication {
 	@FeignClient("subscription-service")
 	public interface SubscriptionClient {
 		@GetMapping("filmland/all-subscriptions")
-		String getSubscriptions();
+		String getAllSubscriptions();
+
+		@GetMapping("filmland/all-user-subscriptions")
+		List<String> getAllUserSubscriptions(@RequestParam String email);
 	}
 }

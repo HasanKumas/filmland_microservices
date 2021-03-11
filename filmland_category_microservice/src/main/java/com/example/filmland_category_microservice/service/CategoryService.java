@@ -61,7 +61,7 @@ public class CategoryService {
      * finds all categories from database
      */
     public List<Category> getAllCategories() {
-        List<Category> categories = new ArrayList<>();
+        List<Category> categories;
 
         categories = categoryRepository.findAll();
         return categories;

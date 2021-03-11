@@ -1,8 +1,6 @@
 package com.example.filmland_subscription_microservice.dto;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 

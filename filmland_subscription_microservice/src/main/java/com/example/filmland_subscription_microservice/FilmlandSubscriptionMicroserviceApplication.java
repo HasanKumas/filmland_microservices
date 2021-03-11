@@ -1,8 +1,6 @@
 package com.example.filmland_subscription_microservice;
 
-//import com.example.filmland_category_microservice.model.Category;
 import com.example.filmland_subscription_microservice.dto.CategoryDTO;
-//import com.example.filmland_user_micro_service.model.UserAccount;
 import com.example.filmland_subscription_microservice.repository.SubscriptionRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

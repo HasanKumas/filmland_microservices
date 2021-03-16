@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 public class Category {
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
 
     @NotNull
     @Size(max = 200)

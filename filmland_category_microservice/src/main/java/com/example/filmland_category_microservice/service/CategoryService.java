@@ -22,13 +22,13 @@ public class CategoryService {
      * adds a new category to database
      * @param category category
      */
-    public void addCategory(CategoryRequest category) {
+    public Long addCategory(CategoryRequest category) {
 
         Category newCategory = new Category();
         newCategory.setName(category.getName());
         newCategory.setAvailableContent(category.getAvailableContent());
         newCategory.setPrice(category.getPrice());
-        categoryRepository.save(newCategory);
+        return categoryRepository.save(newCategory).getId();
     }
     /**
      * deletes a category from database
